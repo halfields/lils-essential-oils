@@ -1,27 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/new'
-  get 'static_pages/about'
-  get 'static_pages/contacts'
-  get 'sessions/new'
-  get 'products/index'
-  get 'products/show'
-  get 'products/new'
-  get 'products/edit'
-  get 'orders/new'
-  get 'orders/index'
-  get 'home/front_page'
-  get 'home/welcome'
-  get 'categories/index'
-  get 'categories/show'
-  get 'carts/index'
-  get 'carts/show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'home#welcome'
+   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'static_pages#welcome'
   get 'auth/facebook/callback' => 'sessions#create'
+  get '/about' => 'static_pages#about'
+  get '/contacts' => 'static_pages#contacts'
+  get '/signup' => 'users#new'
 
   resources :categories do 
-  	resources :products, only: [:index, :show]
+  	resources :products
   end
 
   resources :carts do 
@@ -29,10 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders
-  resources :line_items
-  resources :users, only: [:index, :new, :create, :destroy]
+  resources :line_items, only: [:new, :create, :index, :destroy]
+  resources :users, only: [:new, :create, :show]
 
-  scope :admin do 
-  	resources :products, only: [:new, :create]
+  namespace :admin do 
+  	resources :users
   end
 end

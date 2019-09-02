@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def contacts
   end
+
+  def welcome
+  end
 end
