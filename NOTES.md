@@ -15,7 +15,7 @@ Object classes:
 
 	Category:  attributes:  name, product_id
 			associations: has_many: :products
-			controller actions: new, create, destroy
+			controller actions:  index, new, create, show, edit, update, destroy
 
 	Product: attributes: name, description, price, image_url
 			associations: belongs_to: :category
