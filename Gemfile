@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_passwor
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'rack-flash3'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
