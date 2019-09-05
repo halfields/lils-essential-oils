@@ -9,8 +9,14 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to categories_path
   	else
-  		flash.now[:notice] "We need a valid email and password"
+  	#	flash[:notice].now "We need a valid email and password"
   		render 'new'
   	end
   end
+
+  def destroy
+  	session.delete(:user_id)
+  	@current_user = nil
+  end
+
 end
