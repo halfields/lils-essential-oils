@@ -1,10 +1,12 @@
-<h1>@category.name</h1>
+
+
+<h1><%= @category.name %></h1>
 <br>
 <div>
 	<table>
 		<% @category.products.each do |product| %>
 			<tr>
-				<td><%= link_to image_tag(product.image_url), product %></td>
+				<td><%= link_to image_tag(product.image_url), category_product_path(@category, product) %></td>
 				<td><%= product.name %></td>
 				<td><%= product.price %></td>
 			</tr>
@@ -12,5 +14,6 @@
 	</table>
 </div>
 <br>
-<p><%= paginate @category.products %></p>
+
+<p><%= paginate @products %> </p>
 

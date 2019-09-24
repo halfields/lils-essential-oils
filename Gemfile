@@ -27,8 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_passwor
 gem 'bcrypt', '~> 3.1.7'
-gem 'rack-flash3'
-gem 'kaminari'
+gem 'rack-flash3' #gives flash messaging that lasts one http: request cycle
+gem 'kaminari' #paginator
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'jquery-turbolinks', '~> 2.1'
 # Use ActiveStorage variant
@@ -52,6 +52,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry', '~> 0.12.2'
 end
 
 group :test do
